@@ -6,6 +6,7 @@ const UserRouter = () => {
     <>
       <Routes>
         <Route path="/" element={<Dashboard />} />
+        <Route path="*" element={<div>Página não encontrada</div>} />
       </Routes>
     </>
   );

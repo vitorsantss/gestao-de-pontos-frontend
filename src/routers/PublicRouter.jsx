@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import HomePage from "@/pages/HomePage";
 import LoginPage from "@/pages/LoginPage";
-import FirstAccessPage from "@/pages/FirstAccessPage";
 
 const PublicRouter = () => {
   return (
@@ -9,7 +8,7 @@ const PublicRouter = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/first-access" element={<FirstAccessPage />} />
+        <Route path="*" element={<div>Página não encontrada</div>} />
       </Routes>
     </>
   );
