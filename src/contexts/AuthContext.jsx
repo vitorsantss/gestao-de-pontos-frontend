@@ -5,7 +5,6 @@
 import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
-import axios from "axios";
 import { api } from "@/services/api";
 
 export const AuthContext = createContext();
@@ -73,10 +72,6 @@ export const AuthProvider = ({ children }) => {
           "@Auth:user",
           JSON.stringify({ username: decoded.sub })
         );
-
-        axios.defaults.headers.common[
-          "Authorization"
-        ] = `Bearer ${response.data.token}`;
       }
       navigate("/");
     } catch (error) {

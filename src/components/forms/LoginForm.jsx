@@ -30,6 +30,7 @@ const LoginForm = () => {
       
     } catch (error) {
       console.error("Erro ao fazer login:", error);
+      
     } finally {
       setLoading(false);
     }
@@ -56,7 +57,7 @@ const LoginForm = () => {
       <Button
         variant="shadow"
         type="submit"
-        className="bg-black text-white"
+        className="bg-black text-white mt-4"
         isDisabled={loading}>
         {loading ? <Spinner /> : "Entrar"}
       </Button>
