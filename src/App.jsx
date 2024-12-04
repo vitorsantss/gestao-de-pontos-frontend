@@ -1,14 +1,17 @@
-import { Button } from "@nextui-org/button"
+import { BrowserRouter } from "react-router-dom";
+import AppRouter from "./routers/AppRouter";
+import { AuthProvider } from "./contexts/AuthContext";
 
-
-function App() {
-
+const App = () => {
   return (
     <>
-      <h1>Hello Word!</h1>
-      <Button color="primary">Click me</Button>
+      <BrowserRouter>
+        <AuthProvider>
+          <AppRouter />
+        </AuthProvider>
+      </BrowserRouter>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
