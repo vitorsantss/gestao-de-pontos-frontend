@@ -4,6 +4,7 @@ import { useContext } from "react";
 import PublicRouter from "@/routers/PublicRouter";
 import UserRouter from "@/routers/UserRouter";
 import AdminRouter from "@/routers/AdminRouter";
+import Header from "@/components/Header";
 
 const AppRouter = () => {
   const { signed, user } = useContext(AuthContext);
@@ -13,6 +14,7 @@ const AppRouter = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-grow">
+        <Header />
         <Routes>
           {!signed ? (
             <Route path="/*" element={<PublicRouter />} />
