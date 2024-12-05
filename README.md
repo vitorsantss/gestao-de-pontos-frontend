@@ -84,8 +84,7 @@ Certifique-se de ter o seguinte instalado em sua máquina:
 
 ### Públicas
 
-- `/`: Página inicial.
-- `/login`: Página de login.
+- `/`: Página de login.
 
 ### Usuário (Role: `USER`)
 
