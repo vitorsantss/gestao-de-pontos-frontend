@@ -4,7 +4,6 @@ import InputPassword from "@/components/InputPassword";
 import { UserService } from "@/services/UserService";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@nextui-org/button";
-import { Input } from "@nextui-org/input";
 import { Spinner } from "@nextui-org/spinner";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -53,17 +52,17 @@ const RegisterUser = () => {
             onSubmit={handleSubmit(handleRegister)}>
             <InputName
               {...register("name")}
-              errorMessage={errors.email?.message}
+              errorMessage={errors.name?.message}
               isRequired
             />
             <InputRole
               {...register("role")}
-              errorMessage={errors.email?.message}
+              errorMessage={errors.role?.message}
               isRequired
             />
             <InputWorkSchedule
               {...register("work_schedule")}
-              errorMessage={errors.email?.message}
+              errorMessage={errors.work_schedule?.message}
               isRequired
             />
             <InputEmail
@@ -85,12 +84,13 @@ const RegisterUser = () => {
               isDisabled={loading}>
               {loading ? <Spinner /> : "Cadastrar"}
             </Button>
-          <Button onClick={() => navigate("/")}
-            color="default"
-            variant="bordered"
-            className="max-w-xs">
-            Voltar
-          </Button>
+            <Button
+              onClick={() => navigate("/")}
+              color="default"
+              variant="bordered"
+              className="max-w-xs">
+              Voltar
+            </Button>
           </form>
         </div>
       </div>

@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   Table,
   TableHeader,
@@ -13,10 +13,6 @@ import {
   Tooltip,
   getKeyValue,
 } from "@nextui-org/react";
-import { EyeIcon } from "@/icons/EyeIcon";
-import { EditIcon } from "@/icons/EditIcon";
-import { DeleteIcon } from "@/icons/DeleteIcon";
-import { UserService } from "@/services/UserService";
 
 const statusColorMap = {
   active: "success",
@@ -27,15 +23,12 @@ const statusColorMap = {
 const columns = [
   { name: "NOME", uid: "name" },
   { name: "PERFIL", uid: "role" },
-  { name: "HORÁRIO DE TRABALHO", uid: "work_schedule" }
+  { name: "HORÁRIO DE TRABALHO", uid: "work_schedule" },
 ];
 
 const TableUsers = ({ users }) => {
-  
   const renderCell = React.useCallback((user, columnKey) => {
     const cellValue = user[columnKey];
-    
-    
 
     switch (columnKey) {
       case "name":
@@ -50,7 +43,9 @@ const TableUsers = ({ users }) => {
       case "role":
         return (
           <div className="flex flex-col">
-            <p className="text-bold text-sm capitalize">{cellValue === "ADMIN" ? "Adminstrador" : "Colaborador"}</p>
+            <p className="text-bold text-sm capitalize">
+              {cellValue === "ADMIN" ? "Adminstrador" : "Colaborador"}
+            </p>
           </div>
         );
       case "work_schedule":
@@ -72,9 +67,7 @@ const TableUsers = ({ users }) => {
     <Table aria-label="Example table with custom cells">
       <TableHeader columns={columns}>
         {(column) => (
-          <TableColumn
-            key={column.uid}
-            align={"start"}>
+          <TableColumn key={column.uid} align={"start"}>
             {column.name}
           </TableColumn>
         )}
@@ -90,6 +83,6 @@ const TableUsers = ({ users }) => {
       </TableBody>
     </Table>
   );
-}
+};
 
 export default TableUsers;
