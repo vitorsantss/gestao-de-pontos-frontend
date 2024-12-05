@@ -82,7 +82,7 @@ export const AuthProvider = ({ children }) => {
   const signOut = () => {
     localStorage.clear();
     setUser(null);
-    navigate("/login");
+    navigate("/");
   };
 
   return (
