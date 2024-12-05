@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ActionCard from "../components/ActionCard";
+import ActionCard from "../../../components/ActionCard";
 import TableUsers from "../components/TableUsers";
 import { UserService } from "@/services/UserService";
 
@@ -25,12 +25,6 @@ const Dashboard = () => {
       </div>
 
       <div className="flex max-y-sm flex-col xl:flex-row gap-3">
-        {/* <ActionCard
-          description="Registrar ponto de jornada de trabalho"
-          icon="solar:document-add-linear"
-          title="Registrar Ponto"
-          href="/worklogs"
-        /> */}
         <ActionCard
           description="Cadastre novos usuários para o sistema"
           icon="solar:user-rounded-linear"

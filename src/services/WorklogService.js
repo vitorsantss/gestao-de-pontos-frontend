@@ -1,10 +1,10 @@
 import { api } from "./api";
 
-export class UserService {
+export class WorklogService {
 
     static async getAll() {
         try {
-            const response = await api.get("/users", {
+            const response = await api.get("/worklogs", {
                 headers: {
                     Authorization:
                         "Bearer " +
@@ -22,9 +22,9 @@ export class UserService {
         }
     }
 
-    static async getById(id) {
+    static async getSummary() {
         try {
-            const response = await api.get(`/users/${id}`, {
+            const response = await api.get("/worklogs/summary", {
                 headers: {
                     Authorization:
                         "Bearer " +
@@ -42,14 +42,11 @@ export class UserService {
         }
     }
 
-    static async create({ name, email, password, role, work_schedule }) {
+    static async create({ logType, timestamp }) {
         try {
-            const response = await api.post("/auth/register", {
-                name,
-                email,
-                password,
-                role,
-                work_schedule
+            const response = await api.post("/worklogs/register", {
+                logType,
+                timestamp
             }, {
                 headers: {
                     Authorization:
